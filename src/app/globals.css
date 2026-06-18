@@ -1,26 +1,210 @@
 @import "tailwindcss";
 
+@theme {
+  /* Paleta principal — azul Travel Tours (del logo) */
+  --color-primary:     #1B90D2;
+  --color-primary-50:  #eef7fd;
+  --color-primary-100: #d5ecf9;
+  --color-primary-200: #a8d8f3;
+  --color-primary-300: #6ebde9;
+  --color-primary-400: #3aa5dd;
+  --color-primary-500: #1B90D2;
+  --color-primary-600: #1678b2;
+  --color-primary-700: #115e8e;
+  --color-primary-800: #0d486e;
+  --color-primary-900: #093653;
+
+  /* Paleta secundaria — amarillo sol Travel Tours (del logo) */
+  --color-secondary:     #FFCA00;
+  --color-secondary-50:  #fffbeb;
+  --color-secondary-100: #fff3c4;
+  --color-secondary-200: #ffe680;
+  --color-secondary-300: #ffd633;
+  --color-secondary-400: #ffca00;
+  --color-secondary-500: #FFCA00;
+  --color-secondary-600: #d4a800;
+  --color-secondary-700: #a88500;
+  --color-secondary-800: #7a6000;
+  --color-secondary-900: #524000;
+
+  /* Background */
+  --color-background: #FAFAF8;
+
+  /* Tipografías */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sans:    'Inter', system-ui, sans-serif;
+
+  /* Tokens Material Design 3 para el diseño de tours */
+  --color-primary-container:         #007bb8;
+  --color-on-primary-container:      #fcfcff;
+  --color-secondary-container:       #fdc003;
+  --color-on-secondary-container:    #6c5000;
+  --color-tertiary-container:        #4671cd;
+  --color-on-tertiary-container:     #fefcff;
+  --color-surface-container-lowest:  #ffffff;
+  --color-surface-container-low:     #f3f3f6;
+  --color-surface-container:         #eeeef0;
+  --color-surface-container-high:    #e8e8ea;
+  --color-surface-container-highest: #e2e2e5;
+  --color-on-surface:                #1a1c1e;
+  --color-on-surface-variant:        #404850;
+  --color-outline-variant:           #bfc7d1;
+  --color-outline:                   #707881;
+  --color-primary-fixed:             #cce5ff;
+  --color-primary-fixed-dim:         #91cdff;
+  --color-secondary-fixed-dim:       #fabd00;
+  --color-inverse-surface:           #2f3133;
+
+  /* Tokens adicionales para la vista de detalle */
+  --color-on-primary:                #ffffff;
+  --color-error:                     #ba1a1a;
+  --color-on-primary-fixed:          #001e31;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.icon-filled {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ── Reveal on scroll (data-anim) ───────────── */
+[data-anim] {
+  opacity: 0;
+  transition:
+    opacity  0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-anim="up"],
+[data-anim] { transform: translateY(30px); }
+[data-anim="left"]  { transform: translateX(-44px); }
+[data-anim="right"] { transform: translateX(44px); }
+[data-anim="scale"] { transform: scale(0.88) translateY(16px); }
+[data-anim="fade"]  { transform: none; }
+
+[data-anim].anim-visible {
+  opacity: 1;
+  transform: none !important;
+}
+
+/* ── Animaciones de entrada ──────────────────── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.anim-fade-up {
+  animation: fade-up 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.anim-fade-in {
+  animation: fade-in 1s ease both;
+}
+
+.anim-delay-1 { animation-delay: 0.10s; }
+.anim-delay-2 { animation-delay: 0.28s; }
+.anim-delay-3 { animation-delay: 0.48s; }
+.anim-delay-4 { animation-delay: 0.68s; }
+
+/* ── Pantalla de carga ───────────────────────── */
+@keyframes loading-bar {
+  0%   { transform: translateX(-100%); }
+  50%  { transform: translateX(0%); }
+  100% { transform: translateX(100%); }
+}
+.animate-loading-bar {
+  animation: loading-bar 1.4s ease-in-out infinite;
+}
+
+/* ── Carrusel de experiencias — scrollbar oculto ─ */
+[data-card] {
+  width: calc(85vw - 40px);
+  max-width: 300px;
+}
+@media (min-width: 640px) {
+  [data-card] { width: calc(50% - 14px); max-width: 400px; }
+}
+@media (min-width: 1024px) {
+  [data-card] { width: calc(25% - 15px); max-width: 320px; }
+}
+.overflow-x-auto::-webkit-scrollbar { display: none; }
+
+/* ── Animaciones del bento slider ───────────── */
+@keyframes bento-left {
+  from { opacity: 0; transform: translateX(-52px) scale(0.97); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes bento-right {
+  from { opacity: 0; transform: translateX(52px) scale(0.97); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes bento-up {
+  from { opacity: 0; transform: translateY(52px) scale(0.97); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ── Badge de promoción ──────────────────────── */
+@keyframes promo-pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.18); }
+}
+
+.badge-promo {
+  animation: promo-pulse 1.5s ease-in-out infinite;
+  transform-origin: center;
+  /* Estrella de 12 puntas — sticker de oferta */
+  clip-path: polygon(
+    50% 0%,  55% 18%, 70%  5%,  70% 24%,
+    87% 15%, 82% 33%, 100% 33%, 90% 48%,
+    100% 65%, 82% 60%, 87% 80%, 70% 76%,
+    70% 95%, 55% 82%, 50% 100%, 45% 82%,
+    30% 95%, 30% 76%, 13% 80%, 18% 60%,
+    0%  65%, 10% 48%, 0%  33%, 18% 33%,
+    13% 15%, 30% 24%, 30%  5%,  45% 18%
+  );
+  background: linear-gradient(145deg, #dc2626 0%, #f97316 55%, #eab308 100%);
+  box-shadow: 0 4px 18px rgba(234, 88, 12, 0.55);
+}
+
+.itinerary-line::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 40px;
+  bottom: 20px;
+  width: 2px;
+  background-color: var(--color-outline-variant);
+}
+
 :root {
-  --background: #ffffff;
+  --background: #FAFAF8;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
