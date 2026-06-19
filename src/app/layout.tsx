@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from 'next/font/google';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { SocialFloat } from '@/components/ui/SocialFloat';
+import { WhatsAppChat } from '@/components/ui/WhatsAppChat';
 import { SEO_BASE } from '@/config/seo.config';
 import './globals.css';
 
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="flex-1">{children}</main>
         <Footer />
         <SocialFloat />
+        <WhatsAppChat />
       </body>
     </html>
   );

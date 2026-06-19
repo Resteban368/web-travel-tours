@@ -142,24 +142,14 @@ export default async function HomePage() {
               { '@type': 'State', name: 'Caquetá', containedInPlace: { '@type': 'Country', name: 'Colombia' } },
               { '@type': 'Country', name: 'Colombia' },
             ],
-            address: [
-              {
-                '@type': 'PostalAddress',
-                streetAddress: EMPRESA.sede1,
-                addressLocality: 'Florencia',
-                addressRegion: 'Caquetá',
-                addressCountry: 'CO',
-                postalCode: '180001',
-              },
-              {
-                '@type': 'PostalAddress',
-                streetAddress: EMPRESA.sede2,
-                addressLocality: 'Florencia',
-                addressRegion: 'Caquetá',
-                addressCountry: 'CO',
-                postalCode: '180001',
-              },
-            ],
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: EMPRESA.sede1,
+              addressLocality: 'Florencia',
+              addressRegion: 'Caquetá',
+              addressCountry: 'CO',
+              postalCode: '180001',
+            },
             contactPoint: {
               '@type': 'ContactPoint',
               telephone: EMPRESA.telefono,

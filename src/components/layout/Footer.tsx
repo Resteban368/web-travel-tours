@@ -13,7 +13,7 @@ export function Footer() {
         <div className="space-y-4">
           <div>
             <Image
-              src="/LOGO.png"
+              src="/logo2.png"
               alt={`Logo ${EMPRESA.nombre}`}
               width={180}
               height={80}

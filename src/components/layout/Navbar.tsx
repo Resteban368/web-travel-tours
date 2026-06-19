@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/Button';
 const LINKS = [
   { href: RUTAS.home, label: 'Inicio' },
   { href: RUTAS.tours, label: 'Tours' },
+  { href: RUTAS.galeria, label: 'Galería' },
   { href: RUTAS.nosotros, label: 'Nosotros' },
   { href: RUTAS.faqs, label: 'Preguntas frecuentes' },
   { href: RUTAS.cotizaciones, label: 'Cotizaciones' },

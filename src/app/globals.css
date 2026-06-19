@@ -186,6 +186,36 @@
   box-shadow: 0 4px 18px rgba(234, 88, 12, 0.55);
 }
 
+/* ── Galería — entrada escalonada de cards ─── */
+@keyframes gallery-enter {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to   { opacity: 1; transform: none; }
+}
+
+.gallery-item {
+  animation: gallery-enter 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ── Shimmer de carga ────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.animate-shimmer {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-surface-container) 0%,
+    var(--color-surface-container-high) 40%,
+    var(--color-surface-container) 80%
+  );
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+
+/* ── Ocultar scrollbar (lightbox thumbnails) */
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+
 .itinerary-line::before {
   content: '';
   position: absolute;

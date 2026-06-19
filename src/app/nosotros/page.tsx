@@ -304,21 +304,6 @@ export default function NosotrosPage() {
                     </div>
                   </div>
 
-                  <div className="flex gap-4">
-                    <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="size-5" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                      </svg>
-                    </span>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-wide text-neutral-400 mb-1">
-                        Punto de referencia
-                      </p>
-                      <p className="text-neutral-800 font-medium">{EMPRESA.sede2}</p>
-                      <p className="text-sm text-neutral-500 mt-0.5">{EMPRESA.ciudad}</p>
-                    </div>
-                  </div>
                 </div>
 
                 <a

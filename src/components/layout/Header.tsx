@@ -10,7 +10,7 @@ export function Header() {
         {/* Logo */}
         <Link href={RUTAS.home} className="shrink-0">
           <Image
-            src="/LOGO.png"
+            src="/logo2.png"
             alt="Travel Tours - Agencia de Viajes Florencia, Caquetá"
             width={180}
             height={60}

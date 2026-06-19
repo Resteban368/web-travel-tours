@@ -3,10 +3,9 @@ export const EMPRESA = {
   slogan: 'Experiencias únicas desde el corazón de Colombia',
   ciudad: 'Florencia, Caquetá, Colombia',
   sede1: 'Barrio Siete de Agosto, Oficina Agencia de Viajes TRAVEL TOURS',
-  sede2: 'Parque de la Libertad (frente al Colegio Instituto Técnico Industrial)',
   telefono: '+573142266528',
   whatsapp: '+573142266528',
-  email: 'traveltourscaqueta@gmail.com',
+  email: 'infoasesoras2022@gmail.com',
   facebook: 'https://www.facebook.com/TravelToursoficial?locale=es_LA',
   instagram: 'https://www.instagram.com/traveltours_oficial/',
   tiktok: 'https://www.tiktok.com/@traveltours.oficial',
@@ -19,6 +18,7 @@ export const RUTAS = {
   cotizaciones: '/cotizaciones',
   faqs: '/faqs',
   nosotros: '/nosotros',
+  galeria: '/galeria',
 } as const;
 
 export const TIPOS_TOUR = {
